@@ -1,15 +1,39 @@
-retorno = '{"nome":"William","idade":23}' 
+async function procurarCEP() {
+    let CEP = document.getElementById('inputCEP').value
 
-json = JSON.parse(retorno)   //Descerializar
-console.log(json)
+    Response = await fetch(`https://brasilapi.com.br/api/cep/v1/${CEP}`);
+    json = await Response.json();
+    
+    cep = document.getElementById("cep")
+    uf = document.getElementById("estado")
+    endereco = document.getElementById("rua")
+    cidade = document.getElementById("cidade")
+    bairro = document.getElementById("bairro")
 
-cadastro = {
-    nome : 'Vinicius',
-    idade : 18
+    cep.innerHTML = json.cep;
+    uf.innerHTML = json.state;
+    endereco.innerHTML = json.street;
+    cidade.innerHTML = json.city;
+    bairro.innerHTML = json.neighborhood;
+
+    console.log(json)
 }
 
-json = JSON.stringify(cadastro)  //Serializar
-console.log(json)
+
+
+
+// retorno = '{"nome":"William","idade":23}' 
+
+// json = JSON.parse(retorno)   //Descerializar
+// console.log(json)
+
+// cadastro = {
+//     nome : 'Vinicius',
+//     idade : 18
+// }
+
+// json = JSON.stringify(cadastro)  //Serializar
+// console.log(json)
 
 // let chamada = [
 //     {
