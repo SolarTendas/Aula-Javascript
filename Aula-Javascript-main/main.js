@@ -1,112 +1,59 @@
-async function procurarCEP() {
-    let CEP = document.getElementById('inputCEP').value
+function Calculate() {
+let nota1 = Number(document.getElementById('nota1').value)
+let nota2 = Number(document.getElementById('nota2').value)
+let nota3 = Number(document.getElementById('nota3').value)
+let Media = (nota1 + nota2 + nota3)/3
+// let notaesperada = 21-(nota1+nota2)
 
-    Response = await fetch(`https://brasilapi.com.br/api/cep/v1/${CEP}`);
-    json = await Response.json();
-    
-    cep = document.getElementById("cep")
-    uf = document.getElementById("estado")
-    endereco = document.getElementById("rua")
-    cidade = document.getElementById("cidade")
-    bairro = document.getElementById("bairro")
-
-    cep.innerHTML = json.cep;
-    uf.innerHTML = json.state;
-    endereco.innerHTML = json.street;
-    cidade.innerHTML = json.city;
-    bairro.innerHTML = json.neighborhood;
-
-    console.log(json)
+// if((nota1+nota2) == 21){
+//     document.write(`Você foi aprovado!!!<br>`);
+//     document.write(`Sua nota é ${Media}`);
+// } else{
+//     document.write(`A nota que precisa tirar é ${notaesperada}`)
+// }
+if(Media >= 7){
+    document.write(`Você foi aprovado!!!<br>`);
+    document.write(`Sua nota é ${Media}`);
+} else{
+    document.write(`Você Reprovou!!<br>`);
+    document.write(`Sua nota é ${Media}<br>`);
+    let notaesperada = 10-(Media)
+    document.write(`A nota que precisa tirar é no exame final é: ${notaesperada}`)
+}
 }
 
-
-
-
-// retorno = '{"nome":"William","idade":23}' 
-
-// json = JSON.parse(retorno)   //Descerializar
-// console.log(json)
-
-// cadastro = {
-//     nome : 'Vinicius',
-//     idade : 18
+// for (let i = 0; i <= 10; i++){
+//     console.log(i * 7)
 // }
 
-// json = JSON.stringify(cadastro)  //Serializar
-// console.log(json)
+var executando = true;
+var pagina = 0;
 
-// let chamada = [
-//     {
-//         ra : 1,
-//         nome : 'Antoni'
-//     },
-//     {
-//         ra : 2,
-//         nome : 'Antony'
-//     },
-//     {
-//         ra : 3,
-//         nome : 'Benicio'
-//     },
-//     {
-//         ra : 4,
-//         nome : 'Caio'
-//     },
-//     {
-//         ra : 5,
-//         nome : 'Davi'
-//     },
-//     {
-//         ra : 6,
-//         nome : 'Eduardo'
-//     },
-//     {
-//         ra : 7,
-//         nome : 'Felipe'
-//     },
-//     {
-//         ra : 8,
-//         nome : 'Gabriel'
-//     }
-// ]
+while (executando) {
+    console.log(pagina);
+    pagina++;
+    executando = (pagina <= 10)
+}
 
+// let a = 10; 
+// let b = 5;
 
-// for (aluno of chamada) {
-//     console.log(aluno.ra, aluno.nome)
+// if (a + b > 10) {
+//     document.write("A conta deu maior que 10")
+// } else {
+//     document.write("A conta deu menor que 10")
 // }
 
 
 
 
-// let pessoa = {
-//     cabelo : 'Curto/Liso',
-//     corCabelo : 'Ruivo',
-//     altura : 1.85,
-//     corPele : 'Branca', 
-//     calçado : 42,
-//     doencas : {
-//         celiaco : true,
-//         oculos: true,
-//         cadeirante: false
-//     },
-//     idade : 18,
-//     Carro : {
-//         modelo : 'Frontier Attack',
-//         marca : 'Mitsubishi',
-//         ano : 2015,
-//         cor : 'Vermelho'
-//     },
-//     materias: ['Web', 'Banco de Dados', 'Extensionista','UI/UX']
-// }
-
-// for (materia of pessoa.materias) {      //Varre a array de materias e retorna os valores da array (of = value) (in = índice) 
-//     console.log(materia)
-// }
+// console.log(a == b); //Igualdade
+// console.log(a != b); //Desigualdade, ! = inverte o valor booleano(Negação)
+// console.log(a > b); //Maior que
+// console.log(a < b); //Menor que
 
 
-
-// console.log(pessoa);
-// console.log(`Qual a altura da pessoa? ${pessoa.altura}`);
-// console.log(`A pessoa é celíaca? ${pessoa.doencas.celiaco}`);
-// console.log(`Qual o tipo de cabelo da pessoa? ${pessoa.cabelo}`);
-// console.log(pessoa.materias);
+// console.log(a + b); //Soma
+// console.log(a - b); //Subtração
+// console.log(a * b); //Multiplicação
+// console.log(a / b); //Divisão
