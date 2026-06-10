@@ -8,17 +8,19 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
 <body>
-    <h2>Aula Javascript</h2>
-    <h4>Simulador de Média:</h4>
-    <span>Digite as notas abaixo:</span>
-    <br>
-    <input type="text" id="nota1" placeholder="Nota 1">
-    <input type="text" id="nota2" placeholder="Nota 2">
-    <input type="text" id="nota3" placeholder="Nota 3">
-    <input type="submit" value="Envie" onclick="Calculate()">
-    <br>
-    <br>
-    <h4>Loops:</h4>
+    <h2 style="font-family: 'Courier New', Courier, monospace;">Consulta CEP</h2>
+
+    <input type="text" id="inputCEP"></input>
+    <button type="submit" onclick="procurarCEP()">Consultar</button>
+
+    <div>
+        <p id="cep"></p>
+        <p id="cidade"></p>
+        <p id="bairro"></p>
+        <p id="estado"></p>
+        <p id="rua"></p>
+    </div>
+
     <script src='main.js'></script>
 </body>
 </html>
